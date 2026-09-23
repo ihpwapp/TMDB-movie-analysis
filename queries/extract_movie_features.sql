@@ -39,7 +39,6 @@ cast_agg AS (
         FROM movie_cast
     ) cr
     JOIN people p ON cr.person_id = p.person_id
-    WHERE cr.rn <= 3
     GROUP BY cr.movie_id
 )
 SELECT m.movie_id, m.imdb_id, m.title, m.original_title, m.status, m.original_language, m.adult, m.video, m.release_date, EXTRACT(YEAR FROM m.release_date) AS release_year, EXTRACT(MONTH FROM m.release_date) AS release_month, EXTRACT(DOW FROM m.release_date) AS release_day_of_week, m.budget, m.revenue, (m.revenue - m.budget) AS net_profit, CASE WHEN m.budget > 0 THEN (m.revenue / CAST(m.budget AS DECIMAL)) ELSE NULL END AS roi, m.runtime, m.popularity AS movie_popularity, m.vote_average, m.vote_count, c.name AS collection_name, CASE WHEN m.belongs_to_collection_id IS NOT NULL THEN 1 ELSE 0 END AS is_part_of_franchise, pg.primary_genre, pc.primary_production_company, pco.primary_country, dir.director_name, cast_agg.cast, m.overview, m.tagline

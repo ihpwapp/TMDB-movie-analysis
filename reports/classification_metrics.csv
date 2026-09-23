@@ -1,0 +1,10 @@
+task,metric,test_value
+greenlight,accuracy,0.6415313225058005
+greenlight,precision,0.5159362549800797
+greenlight,recall,0.796923076923077
+greenlight,f1,0.626360338573156
+greenlight,roc_auc,0.5114396218306833
+tiers,accuracy,0.6067285382830626
+tiers,balanced_accuracy,0.557143270242147
+tiers,macro_f1,0.5639541171461451
+tiers,weighted_f1,0.616268002444276

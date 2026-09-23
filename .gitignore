@@ -7,6 +7,7 @@ __pycache__/
 # Data
 data/raw/*
 data/processed/*
+data/history_features.csv
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
@@ -17,6 +18,11 @@ logs/
 # Database
 *.db
 *.sqlite3
+
+# Trained artifacts (recreate with `python scripts/models/train.py`)
+models/*.json
+models/*.joblib
+!models/.gitkeep
 
 # IDE
 .vscode/
